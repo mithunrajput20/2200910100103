@@ -1,5 +1,5 @@
-# React + Vite
-A simple **React + Vite** app to shorten URLs, manage expiry, and track click counts.  
+# URL Shortner
+A simple **URL Shortener** app to shorten URLs, manage expiry, and track click counts.  
 Built with **React Router v6** and **Material UI**.
 
 ##  Features
