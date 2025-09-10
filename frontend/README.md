@@ -1,8 +1,19 @@
 # React + Vite
+A simple **React + Vite** app to shorten URLs, manage expiry, and track click counts.  
+Built with **React Router v6** and **Material UI**.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  Features
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Shorten any valid URL with:
+  - **Auto-generated slug** (random base62 string)
+  - **Custom slug** (alphanumeric + `-` / `_`, 3–20 chars)
+- **Default validity**: 30 minutes (if none specified)
+- Track:
+  - Original URL
+  - Short URL
+  - Created time
+  - Expiry time
+  - Click count
+- Redirect with **expiry check** and **error messages**
+- **LocalStorage persistence** (no backend required)
+- Responsive, styled with Material UI
