@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Typography, TextField, Button, Alert, Paper } from "@mui/material";
 import { normalizeUrl, randomSlug, saveStore } from "../utils";
+import { logEvent } from "../utils/logger";
 
 export default function Home({ store, setStore }) {
   const [urls, setUrls] = useState([{ url: "", slug: "", validity: "" }]);
@@ -8,7 +9,10 @@ export default function Home({ store, setStore }) {
   const [success, setSuccess] = useState([]);
 
   const handleAddRow = () => {
-    if (urls.length < 5) setUrls([...urls, { url: "", slug: "", validity: "" }]);
+    if (urls.length < 5) {
+        setUrls([...urls, { url: "", slug: "", validity: "" }]);
+        logEvent("info", "Added a new URL input field", { total: urls.length + 1 });
+    }
   };
 
   const handleChange = (index, field, value) => {
